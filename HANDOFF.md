@@ -5,9 +5,9 @@ Written for an agent with zero context. Read `AGENTS.md` first, then `PLAN.md`, 
 
 ## Current state
 
-Phase 0 (bootstrap) is complete. There is **no application code** and **no dependency
-manifest** yet. The stack is locked: **Tauri 2 + Rust core + SvelteKit static frontend**
-(D-011). The license is settled: **MIT** (D-012). Nothing blocks Phase 1.
+Phase 0 (bootstrap) is complete. Phase 1 (scaffold) is in progress; the detailed milestone
+plan is `docs/phase-1-plan.md`. The stack is locked: **Tauri 2 + Rust core + SvelteKit static
+frontend** (D-011). The license is settled: **MIT** (D-012).
 
 ## What exists
 

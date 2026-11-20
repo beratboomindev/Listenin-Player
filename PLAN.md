@@ -27,6 +27,8 @@ pipeline skeleton, with no feature logic yet.
 - A local packaged build exists; no build step inspects `yt-dlp` or `ffmpeg`.
 - Repository layout documented; `.env.example` present with no values.
 
+**Detailed milestone plan:** `docs/phase-1-plan.md` (M1 toolchain → M8 docs).
+
 ## Phase 2 — i18n and theming
 
 **Goal:** all user-facing text is translatable and all colors are semantic tokens driven by
