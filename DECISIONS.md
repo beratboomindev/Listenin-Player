@@ -18,6 +18,7 @@ Decisions recorded here override every other document. `Status` is one of `locke
 | D-009 | 2026-11-20 | Downloads are explicit and user-initiated, never automatic. | locked | Keeps the default flow streaming and puts storage decisions with the user. |
 | D-010 | 2026-11-20 | i18n from day one: no hardcoded UI strings, locales `en` and `tr`. | locked | Retrofitting i18n is expensive; Turkish is a first-class locale from the start. |
 | D-011 | 2026-11-20 | Stack: Tauri 2 (Rust core) + SvelteKit static frontend + system webview; packaging via `tauri-bundler`. | locked | The main window is created by Rust only after a passing pre-flight, so the launch gate is structural; smallest footprint of the candidates. |
+| D-012 | 2026-11-20 | License: MIT. | locked | Lowest friction for an open-source player, permissive, one short file, no patent or copyleft obligations for downstream users. |
 
 ## Locked details
 
@@ -49,7 +50,7 @@ Recorded verbatim from the design reference; mapping them to semantic tokens is 
 | ID | Question | Status | Notes |
 | --- | --- | --- | --- |
 | O-001 | Stack choice: frontend + backend + packaging. | open | Three options presented in chat; maintainer chooses. |
-| O-002 | License. | open | Must be chosen by the maintainer; not to be guessed. |
+| O-002 | ~~License~~ — resolved: MIT (D-012). | resolved | Chosen by the maintainer on 2026-11-20. |
 | O-003 | Packaging target(s). | open | Depends on the stack choice. |
 | O-004 | Semantic palette mapping (background, surface, elevated surface, border, text, text-muted, accent). | open | Implementation phase; values above are verbatim and not yet assigned. |
 | O-005 | Spotify OAuth flow: PKCE per user, local redirect, token storage. | open | PKCE is required; redirect handling depends on the stack. |

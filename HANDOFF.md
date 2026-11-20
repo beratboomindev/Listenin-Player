@@ -7,7 +7,7 @@ Written for an agent with zero context. Read `AGENTS.md` first, then `PLAN.md`, 
 
 Phase 0 (bootstrap) is complete. There is **no application code** and **no dependency
 manifest** yet. The stack is locked: **Tauri 2 + Rust core + SvelteKit static frontend**
-(D-011). The only unresolved blocker is the license.
+(D-011). The license is settled: **MIT** (D-012). Nothing blocks Phase 1.
 
 ## What exists
 
@@ -15,7 +15,8 @@ manifest** yet. The stack is locked: **Tauri 2 + Rust core + SvelteKit static fr
 - `AGENTS.md` — entry point, project rules, skill usage, launch-gate invariant, performance
   budget, commit convention, stop-and-ask list.
 - `PLAN.md` — phases 0 to 6 with done criteria, plus the performance budget.
-- `DECISIONS.md` — locked decisions D-001 to D-011 and open decisions O-002 to O-006.
+- `DECISIONS.md` — locked decisions D-001 to D-012 and open decisions O-002 to O-006.
+- `LICENSE` — MIT, copyright 2026 beratboomindev.
 - `HANDOFF.md` — this file.
 - `ui-sample/ui1.png` — low-fidelity layout reference (sidebar, top bar with logo and search,
   content area, persistent bottom player bar). Colors are not the palette.
@@ -23,7 +24,6 @@ manifest** yet. The stack is locked: **Tauri 2 + Rust core + SvelteKit static fr
 
 ## What is blocked
 
-- License (O-002) — must be chosen and confirmed by the maintainer, never guessed.
 - Packaging target (O-003) — Tauri is locked, but the target set (Linux AppImage/deb, macOS
   dmg, Windows msi) is not.
 - Semantic palette mapping (O-004) and minimum `yt-dlp` version (O-006) — implementation phase.
@@ -36,12 +36,10 @@ manifest** yet. The stack is locked: **Tauri 2 + Rust core + SvelteKit static fr
 
 ## Exact next action
 
-1. Add the chosen license file, record it as a locked decision, and update the license line in
-   `README.md`.
-2. Start Phase 1: scaffold Tauri 2 with a Rust core and a SvelteKit static frontend, plus
+1. Start Phase 1: scaffold Tauri 2 with a Rust core and a SvelteKit static frontend, plus
    lint/format/type-check/test commands and a CI workflow. No `yt-dlp` checks in any build or
    packaging step.
-3. Use the `ui-ux-pro-max` skill for all UI work, and `frontend-design` for the visual
+2. Use the `ui-ux-pro-max` skill for all UI work, and `frontend-design` for the visual
    direction.
 
 Do not implement the launch gate as a UI overlay that can be dismissed. It is a pre-mount
