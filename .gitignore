@@ -1,0 +1,23 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Dependencies and build output (stack TBD)
+node_modules/
+dist/
+build/
+target/
+out/
+
+# Local data and caches
+*.sqlite
+*.sqlite3
+*.db
+.cache/
+
+# OS and editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

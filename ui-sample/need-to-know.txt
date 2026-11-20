@@ -1,0 +1,12 @@
+Reference guide for this folder.
+
+- ui1.png is a layout reference only. The colors in that image are NOT the app's
+  color palette. Ignore them completely.
+- The app ships with multiple color palettes, switchable at runtime from Settings.
+- Palette 1 (sage): #8f9989, #6b7566, #484f45, #20231f, #0c0e0c
+- Palette 2 (graphite): #5e6374, #3e414d, #1e2025, #0b0c0e, #0b0c0e
+- Palette 3 (crimson/emerald): #af1f4d, #61112b, #451726, #1faf80, #116147
+- Palette values are recorded verbatim. Mapping them to semantic tokens
+  (background, surface, elevated surface, border, text, text-muted, accent)
+  is an open decision for the implementation phase.
+- ui-sample/ is a design reference. Application code must never import from it.
