@@ -4,7 +4,7 @@ Listenin' is an open-source, local-first music player. Browse artists, albums an
 your own Spotify account; Listenin' plays the equivalent audio on your own machine through
 your own `yt-dlp` binary. No hosted backend, no shared account, no bundled content.
 
-- Status: **pre-alpha** · Stack: **TBD — see `DECISIONS.md`** · License: **TBD**
+- Status: **pre-alpha** · Stack: **Tauri 2 (Rust) + SvelteKit — see `DECISIONS.md`** · License: **TBD**
 
 ## Requirements
 

@@ -29,6 +29,18 @@ never will be one.
   colors are not the app palette. It must not be modified except by appending to
   `ui-sample/need-to-know.txt`.
 
+## Skills
+
+- Use a skill whenever one matches the task, before improvising. Never hand-roll guidance a
+  skill already provides.
+- UI and UX work — layout, components, palettes, typography, motion, accessibility — must use
+  the `ui-ux-pro-max` skill. New visual direction also uses `frontend-design`. Prompt
+  engineering uses `prompt-master`.
+- If a required skill is missing, install it and restart the session so it can be loaded, then
+  continue. Do not fake or paraphrase a skill that is not available.
+- Skill output is a recommendation, not an override: `DECISIONS.md`, the project rules and the
+  locked palettes in `ui-sample/need-to-know.txt` win over any skill suggestion.
+
 ## Non-negotiable invariant: install always works, launch is gated
 
 This invariant overrides convenience, deadlines and feature requests.

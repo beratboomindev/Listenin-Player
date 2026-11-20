@@ -17,6 +17,7 @@ Decisions recorded here override every other document. `Status` is one of `locke
 | D-008 | 2026-11-20 | The app is local-only with no hosted backend. | locked | Local-first is the product; a backend would add cost, accounts and a single point of failure. |
 | D-009 | 2026-11-20 | Downloads are explicit and user-initiated, never automatic. | locked | Keeps the default flow streaming and puts storage decisions with the user. |
 | D-010 | 2026-11-20 | i18n from day one: no hardcoded UI strings, locales `en` and `tr`. | locked | Retrofitting i18n is expensive; Turkish is a first-class locale from the start. |
+| D-011 | 2026-11-20 | Stack: Tauri 2 (Rust core) + SvelteKit static frontend + system webview; packaging via `tauri-bundler`. | locked | The main window is created by Rust only after a passing pre-flight, so the launch gate is structural; smallest footprint of the candidates. |
 
 ## Locked details
 

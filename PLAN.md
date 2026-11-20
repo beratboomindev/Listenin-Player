@@ -13,12 +13,13 @@ code and no chosen stack.
 - `README.md`, `AGENTS.md`, `PLAN.md`, `DECISIONS.md`, `HANDOFF.md` exist and agree.
 - `ui-sample/` preserved and annotated; its palette values recorded verbatim.
 - Product behaviour and hard constraints recorded as locked decisions.
-- Stack still marked TBD, awaiting the maintainer's choice.
+- Palette values recorded verbatim; mapping to semantic tokens still open.
+- Stack locked: Tauri 2 + Rust core + SvelteKit static frontend (D-011).
 
 ## Phase 1 — Application scaffold
 
-**Goal:** a runnable, empty desktop application shell with a build and a release pipeline
-skeleton, chosen stack wired in.
+**Goal:** a runnable Tauri 2 shell with a SvelteKit static frontend, a build, and a release
+pipeline skeleton, with no feature logic yet.
 
 **Done criteria:**
 - App launches into a blank, translated shell on the target OS(es).
