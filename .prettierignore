@@ -1,0 +1,6 @@
+build/
+.svelte-kit/
+node_modules/
+src-tauri/target/
+package-lock.json
+Cargo.lock

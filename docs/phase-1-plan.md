@@ -2,7 +2,7 @@
 
 Companion to `PLAN.md` Phase 1. English only, like every tracked file.
 
-- Status: in progress
+- Status: complete (M1 to M8). Local bundles built: `.deb`, `.rpm`, `.AppImage`.
 - Depends on: D-011 (Tauri 2 + SvelteKit), D-012 (MIT)
 - Out of scope here: Spotify (Phase 3), playback (Phase 4), persistence (Phase 5), full
   theming (Phase 2), packaging targets (Phase 6)
@@ -76,7 +76,8 @@ docs/           phase plans and long-form docs
 
 ### M8 — Documentation and handoff
 
-- `README.md` gains a Development section (commands only, no stack re-litigation).
+- `README.md` gains a pointer to `docs/development.md` (commands only, no stack
+  re-litigation).
 - `HANDOFF.md` and `PLAN.md` updated with the real state.
 - Exit: a fresh clone can reach a running dev shell by following the README.
 

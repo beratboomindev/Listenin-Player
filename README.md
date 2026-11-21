@@ -12,17 +12,20 @@ Listenin' ships no binaries. Install `yt-dlp` and `ffmpeg` yourself, using your 
 package manager.
 
 macOS:
+
 ```bash
 brew install yt-dlp ffmpeg
 ```
 
 Windows:
+
 ```powershell
 winget install yt-dlp.yt-dlp
 winget install Gyan.FFmpeg
 ```
 
 Debian / Ubuntu:
+
 ```bash
 sudo apt install ffmpeg
 python3 -m pipx install yt-dlp
@@ -31,15 +34,12 @@ python3 -m pipx install yt-dlp
 The distro `yt-dlp` package is often outdated; prefer `pipx` or the official binary.
 
 Any OS, fallback:
+
 ```bash
 python3 -m pip install -U yt-dlp
 ```
 
-Verify:
-```bash
-yt-dlp --version
-ffmpeg -version
-```
+Verify: `yt-dlp --version` and `ffmpeg -version`.
 
 Installing the app is a normal, unblocked operation: no install, build or packaging step
 checks for these tools. On launch the app stops at a setup screen instead of opening the
@@ -64,7 +64,6 @@ and provide no warranty.
 
 ## Documentation
 
-- `AGENTS.md` — rules and entry point for agents and contributors.
-- `PLAN.md` — phased roadmap and performance budget.
-- `DECISIONS.md` — locked decisions and open questions.
-- `HANDOFF.md` — current state and how to resume.
+- `docs/development.md` — local setup, commands and repository layout.
+- `docs/phase-1-plan.md` — current phase milestones.
+- `AGENTS.md`, `PLAN.md`, `DECISIONS.md`, `HANDOFF.md` — rules, roadmap, decisions, state.

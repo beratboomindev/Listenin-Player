@@ -1,0 +1,21 @@
+{
+  "app": {
+    "name": "Listenin'",
+    "tagline": "Your music, your machine.",
+    "phase": "Scaffold ready. The interface arrives in the next phase."
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "tr": "Türkçe"
+  },
+  "palette": {
+    "sage": "Sage",
+    "graphite": "Graphite",
+    "crimson-emerald": "Crimson/Emerald"
+  },
+  "runtime": {
+    "version": "Version {version}",
+    "web_preview": "web preview"
+  }
+}

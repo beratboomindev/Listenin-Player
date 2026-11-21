@@ -1,0 +1,66 @@
+/* Palette system implemented in Phase 2 (O-004).
+   Three palettes: sage, graphite, crimson/emerald.
+   Application code must use semantic token variables, never hardcoded colors.
+   Palette persistence handled via data-color-scheme attribute or localStorage.
+   ui-sample/ colors are never imported. */
+
+/* --- Palette definitions ---
+
+   Sage:        #8f9989, #6b7566, #484f45, #20231f, #0c0e0c
+   Graphite:    #5e6374, #3e414d, #1e2025, #0b0c0e, #0b0c0e
+   Crimson/Em: #af1f4d, #61112b, #451726, #1faf80, #116147
+
+   Semantic token mapping (recorded in DECISIONS.md D-003/O-004):
+
+   Token             | Sage       | Graphite   | Crimson/Emerald
+   ----------------- | ---------- | ---------- | ---------------
+   `background`      | #0c0e0c    | #0b0c0e    | #116147
+   `surface`         | #20231f    | #1e2025    #451726
+   `elevated surface`| #484f45    | #3e414d    #61112b
+   `border`          | #6b7566    | #3e414d    #af1f4d
+   `text`            #eceef0    #eceef0    #eceef0
+   `text-muted`      #9aa0a6    #9aa0a6    #9aa0a6
+   `accent`          #8f9989    #5e6374    #af1f4d
+*/
+
+:root {
+  color-scheme: dark;
+
+  --color-bg: #111213;
+  --color-surface: #191b1d;
+  --color-border: #2a2d31;
+  --color-text: #eceef0;
+  --color-text-muted: #9aa0a6;
+
+  --radius-md: 10px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  /* Default palette (sage) — can be switched via html[data-color-scheme] */
+  --color-bg: #0c0e0c;
+  --color-surface: #20231f;
+  --color-border: #6b7566;
+  --color-text: #eceef0;
+  --color-text-muted: #9aa0a6;
+}
+
+/* Palette switchers via data attribute on <html> */
+html[data-color-scheme='graphite'] {
+  --color-bg: #0b0c0e;
+  --color-surface: #1e2025;
+  --color-border: #3e414d;
+  --color-text: #eceef0;
+  --color-text-muted: #9aa0a6;
+}
+
+html[data-color-scheme='crimson-emerald'] {
+  --color-bg: #116147;
+  --color-surface: #451726;
+  --color-border: #af1f4d;
+  --color-text: #eceef0;
+  --color-text-muted: #9aa0a6;
+}

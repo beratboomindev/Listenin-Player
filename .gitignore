@@ -16,8 +16,18 @@ out/
 *.db
 .cache/
 
+# Frontend and Rust build output
+.svelte-kit/
+build/
+node_modules/
+src-tauri/target/
+src-tauri/gen/
+
 # OS and editor
 .DS_Store
 Thumbs.db
 .idea/
 .vscode/
+
+# Local agent tooling output
+.memo/

@@ -1,0 +1,21 @@
+{
+  "app": {
+    "name": "Listenin'",
+    "tagline": "Müziğin, kendi makinende.",
+    "phase": "İskelet hazır. Arayüz bir sonraki aşamada geliyor."
+  },
+  "language": {
+    "label": "Dil",
+    "en": "English",
+    "tr": "Türkçe"
+  },
+  "palette": {
+    "sage": "Safir",
+    "graphite": "Grafit",
+    "crimson-emerald": "Kırmızı/Emerald"
+  },
+  "runtime": {
+    "version": "Sürüm {version}",
+    "web_preview": "tarayıcı önizlemesi"
+  }
+}
