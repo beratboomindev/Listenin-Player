@@ -1,18 +1,46 @@
 {
   "app": {
-    "name": "Listenin'",
-    "tagline": "Your music, your machine.",
-    "phase": "Scaffold ready. The interface arrives in the next phase."
+    "name": "Listenin'"
+  },
+  "nav": {
+    "artists": "Artists",
+    "settings": "Settings",
+    "library_hint": "Your local library arrives in a later phase."
+  },
+  "search": {
+    "placeholder": "Search Spotify artists and albums (phase 3)"
+  },
+  "content": {
+    "title": "Your listening room",
+    "subtitle": "Browse in Spotify. Play locally with yt-dlp.",
+    "sample": "Sample data",
+    "tracks": "Tracks"
+  },
+  "player": {
+    "nothing": "Nothing playing",
+    "hint": "Playback arrives with the yt-dlp resolver.",
+    "play": "Play",
+    "pause": "Pause",
+    "previous": "Previous track",
+    "next": "Next track",
+    "volume": "Volume"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "palette": "Palette",
+    "close": "Close settings",
+    "palette_sage": "Sage",
+    "palette_graphite": "Graphite",
+    "palette_crimson": "Crimson / emerald"
   },
   "language": {
-    "label": "Language",
     "en": "English",
     "tr": "Türkçe"
   },
-  "palette": {
-    "sage": "Sage",
-    "graphite": "Graphite",
-    "crimson-emerald": "Crimson/Emerald"
+  "a11y": {
+    "open_settings": "Open settings",
+    "search": "Search"
   },
   "runtime": {
     "version": "Version {version}",

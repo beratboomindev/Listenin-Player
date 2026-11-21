@@ -1,177 +1,136 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import { invoke } from '@tauri-apps/api/core';
-  import { locale, setLocale, t, type Locale } from '#lib/i18n';
-
-  let version: string | null = null;
-
-  onMount(async () => {
-    try {
-      version = await invoke<string>('version');
-    } catch {
-      version = null;
-    }
-    // Initialize color scheme from meta tag or default to sage
-    const metaScheme = document.querySelector('meta[name="color-scheme"]');
-    if (metaScheme) {
-      document.documentElement.dataset.colorScheme = 'sage';
-    }
-  });
-
-  const languages: Locale[] = ['en', 'tr'];
-
-  // Color scheme store with default 'sage'
-  import { writable } from 'svelte/store';
-  const colorScheme = writable<'sage' | 'graphite' | 'crimson-emerald'>('sage');
+  import { t } from '#lib/i18n';
+  import { tracks } from '#lib/sample/library';
 </script>
 
-<main>
-  <div class="mark" aria-hidden="true">
-    <span></span><span></span><span></span>
-  </div>
+<section aria-labelledby="page-title">
+  <p class="eyebrow">{$t('content.sample')}</p>
+  <h1 id="page-title">{$t('content.title')}</h1>
+  <p class="subtitle">{$t('content.subtitle')}</p>
 
-  <h1>{$t('app.name')}</h1>
-  <p class="tagline">{$t('app.tagline')}</p>
-  <p class="phase">{$t('app.phase')}</p>
+  <h2>{$t('content.tracks')}</h2>
 
-  <div class="language">
-    <span class="label">{$t('language.label')}</span>
-    <div class="options" role="group" aria-label={$t('language.label')}>
-      {#each languages as language (language)}
-        <button
-          type="button"
-          aria-pressed={$locale === language}
-          onclick={() => setLocale(language)}
-        >
-          {$t(`language.${language}`)}
-        </button>
-      {/each}
-      <!-- Palette selector buttons -->
-      <button
-        type="button"
-        aria-pressed={$colorScheme === 'graphite'}
-        onclick={() => colorScheme.set('graphite')}
-        class:active={$colorScheme === 'graphite'}
-      >
-        {$t('palette.graphite')}
-      </button>
-      <button
-        type="button"
-        aria-pressed={$colorScheme === 'crimson-emerald'}
-        onclick={() => colorScheme.set('crimson-emerald')}
-        class:active={$colorScheme === 'crimson-emerald'}
-      >
-        {$t('palette.crimson-emerald')}
-      </button>
-    </div>
-  </div>
-
-  <footer>
-    {version ? $t('runtime.version', { version }) : $t('runtime.web_preview')}
-  </footer>
-</main>
+  <ul>
+    {#each tracks as track, index (track.id)}
+      <li>
+        <span class="index">{String(index + 1).padStart(2, '0')}</span>
+        <span class="meta">
+          <span class="title">{track.title}</span>
+          <span class="artist">{track.artist}</span>
+        </span>
+        <span class="kind">{track.kind}</span>
+        <span class="duration">{track.duration}</span>
+      </li>
+    {/each}
+  </ul>
+</section>
 
 <style>
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-4);
-    min-height: 100%;
-    padding: var(--space-8);
-    text-align: center;
+  section {
+    max-width: 880px;
   }
 
-  .mark {
-    display: flex;
-    align-items: flex-end;
-    gap: 6px;
-    height: 40px;
-    margin-bottom: var(--space-4);
-  }
-
-  .mark span {
-    display: block;
-    width: 8px;
-    border-radius: 4px;
-    background: var(--color-text);
-    opacity: 0.9;
-  }
-
-  .mark span:nth-child(1) {
-    height: 18px;
-  }
-
-  .mark span:nth-child(2) {
-    height: 32px;
-  }
-
-  .mark span:nth-child(3) {
-    height: 24px;
+  .eyebrow {
+    margin: 0 0 var(--space-2);
+    color: var(--color-accent);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
   h1 {
     margin: 0;
-    font-size: 2.25rem;
+    font-size: clamp(28px, 4vw, 44px);
     font-weight: 600;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
   }
 
-  .tagline {
+  .subtitle {
+    margin: var(--space-3) 0 0;
+    color: var(--color-muted);
+    font-size: 14px;
+  }
+
+  h2 {
+    margin: var(--space-8) 0 var(--space-3);
+    color: var(--color-muted);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  ul {
     margin: 0;
-    color: var(--color-text-muted);
-    font-size: 1.0625rem;
+    padding: 0;
+    list-style: none;
   }
 
-  .phase {
-    max-width: 34ch;
-    margin: var(--space-4) 0 0;
-    color: var(--color-text-muted);
-    font-size: 0.9375rem;
-    line-height: 1.5;
-  }
-
-  .language {
-    display: flex;
+  li {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr) 96px 48px;
     align-items: center;
-    gap: var(--space-4);
-    margin-top: var(--space-6);
-    padding: var(--space-4);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-2);
+    border-bottom: 1px solid var(--color-border);
+    transition: background-color var(--transition-fast);
+  }
+
+  li:hover {
     background: var(--color-surface);
   }
 
-  .label {
-    color: var(--color-text-muted);
-    font-size: 0.875rem;
+  .index {
+    color: var(--color-muted);
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
   }
 
-  .options {
+  .meta {
     display: flex;
-    gap: 8px;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
   }
 
-  button {
-    min-height: 44px;
-    padding: 0 16px;
+  .title {
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .artist {
+    color: var(--color-muted);
+    font-size: 12px;
+  }
+
+  .kind {
+    justify-self: start;
+    padding: 2px 8px;
     border: 1px solid var(--color-border);
-    border-radius: 8px;
-    background: transparent;
-    cursor: pointer;
+    border-radius: 999px;
+    color: var(--color-muted);
+    font-size: 11px;
   }
 
-  button[aria-pressed='true'] {
-    border-color: var(--color-text);
-    background: var(--color-text);
-    color: var(--color-bg);
+  .duration {
+    justify-self: end;
+    color: var(--color-muted);
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
   }
 
-  footer {
-    position: fixed;
-    bottom: var(--space-6);
-    color: var(--color-text-muted);
-    font-size: 0.8125rem;
+  @media (max-width: 720px) {
+    li {
+      grid-template-columns: 24px minmax(0, 1fr) 44px;
+    }
+
+    .kind {
+      display: none;
+    }
   }
 </style>

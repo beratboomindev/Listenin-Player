@@ -1,18 +1,46 @@
 {
   "app": {
-    "name": "Listenin'",
-    "tagline": "Müziğin, kendi makinende.",
-    "phase": "İskelet hazır. Arayüz bir sonraki aşamada geliyor."
+    "name": "Listenin'"
+  },
+  "nav": {
+    "artists": "Sanatçılar",
+    "settings": "Ayarlar",
+    "library_hint": "Yerel kütüphane sonraki aşamalarda gelir."
+  },
+  "search": {
+    "placeholder": "Spotify'da sanatçı ve albüm ara (3. aşama)"
+  },
+  "content": {
+    "title": "Dinleme odan",
+    "subtitle": "Spotify'da gez. yt-dlp ile yerelde çal.",
+    "sample": "Örnek veri",
+    "tracks": "Şarkılar"
+  },
+  "player": {
+    "nothing": "Çalan bir şey yok",
+    "hint": "Oynatma, yt-dlp çözümleyicisiyle gelecek.",
+    "play": "Oynat",
+    "pause": "Duraklat",
+    "previous": "Önceki şarkı",
+    "next": "Sonraki şarkı",
+    "volume": "Ses"
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "language": "Dil",
+    "palette": "Palet",
+    "close": "Ayarları kapat",
+    "palette_sage": "Adaçayı",
+    "palette_graphite": "Grafit",
+    "palette_crimson": "Kızıl / zümrüt"
   },
   "language": {
-    "label": "Dil",
     "en": "English",
     "tr": "Türkçe"
   },
-  "palette": {
-    "sage": "Safir",
-    "graphite": "Grafit",
-    "crimson-emerald": "Kırmızı/Emerald"
+  "a11y": {
+    "open_settings": "Ayarları aç",
+    "search": "Ara"
   },
   "runtime": {
     "version": "Sürüm {version}",

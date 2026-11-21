@@ -41,3 +41,6 @@ ui-sample/       design reference only, never imported by app code
   catalog without the other fails `npm test`.
 - Module imports use Node subpath imports: `#lib/*` maps to `src/lib/*` in `package.json`.
   `tsconfig.json` mirrors the mapping because TypeScript does not resolve `imports` here.
+- Palettes live in `src/lib/theme/palettes.ts`. The `source` arrays are verbatim and must not
+  be edited; derived tokens and their contrast floors are documented in `DECISIONS.md`
+  (D-013). Components only ever read `--color-*` variables, never hex values.

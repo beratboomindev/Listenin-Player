@@ -1,2 +1,3 @@
 export const prerender = true;
-export const ssr = false;
+// Prerendering keeps the first paint populated; the app ships static files inside Tauri.
+export const ssr = true;

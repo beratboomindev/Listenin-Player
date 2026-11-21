@@ -47,6 +47,9 @@ runtime-switchable palettes.
   text-muted, accent); the mapping is recorded in `DECISIONS.md`.
 - No component reads colors from `ui-sample/`.
 
+Status: complete. Mapping recorded as D-013; palette switching persists via `localStorage`;
+`src/lib/theme/palettes.test.ts` enforces contrast floors.
+
 ## Phase 3 — Spotify browse layer ⏳ Pending
 
 **Goal:** per-user Spotify OAuth login and read-only browsing of artists, albums and tracks.
