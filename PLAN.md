@@ -11,7 +11,8 @@ code and no chosen stack.
 **Done criteria:**
 
 - Repository initialized on `main` with one bootstrap commit.
-- `README.md`, `AGENTS.md`, `PLAN.md`, `DECISIONS.md`, `HANDOFF.md` exist and agree.
+- `README.md`, `PLAN.md`, `DECISIONS.md` exist and agree; agent-only docs stay local and
+  untracked.
 - `ui-sample/` preserved and annotated; its palette values recorded verbatim.
 - Product behaviour and hard constraints recorded as locked decisions.
 - Palette values recorded verbatim; mapping to semantic tokens still open.

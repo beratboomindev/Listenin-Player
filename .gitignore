@@ -31,3 +31,7 @@ Thumbs.db
 
 # Local agent tooling output
 .memo/
+
+# Agent-only documents (kept on disk, never published)
+AGENTS.md
+HANDOFF.md

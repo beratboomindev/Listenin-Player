@@ -78,7 +78,7 @@ docs/           phase plans and long-form docs
 
 - `README.md` gains a pointer to `docs/development.md` (commands only, no stack
   re-litigation).
-- `HANDOFF.md` and `PLAN.md` updated with the real state.
+- `PLAN.md` updated with the real state; the local handoff note stays untracked.
 - Exit: a fresh clone can reach a running dev shell by following the README.
 
 ## Done criteria (Phase 1 exit)

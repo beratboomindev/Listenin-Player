@@ -66,4 +66,4 @@ and provide no warranty.
 
 - `docs/development.md` — local setup, commands and repository layout.
 - `docs/phase-1-plan.md` — current phase milestones.
-- `AGENTS.md`, `PLAN.md`, `DECISIONS.md`, `HANDOFF.md` — rules, roadmap, decisions, state.
+- `PLAN.md`, `DECISIONS.md` — roadmap and locked decisions.
