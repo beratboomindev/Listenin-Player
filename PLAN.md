@@ -15,10 +15,10 @@ code and no chosen stack.
   untracked.
 - `ui-sample/` preserved and annotated; its palette values recorded verbatim.
 - Product behaviour and hard constraints recorded as locked decisions.
-- Palette values recorded verbatim; mapping to semantic tokens still open.
+- Palette values recorded verbatim; semantic token mapping resolved in Phase 2 (D-013).
 - Stack locked: Tauri 2 + Rust core + SvelteKit static frontend (D-011).
 
-## Phase 1 — Application scaffold ⏳ Pending
+## Phase 1 — Application scaffold ✅ Complete
 
 **Goal:** a runnable Tauri 2 shell with a SvelteKit static frontend, a build, and a release
 pipeline skeleton, with no feature logic yet.
@@ -32,7 +32,7 @@ pipeline skeleton, with no feature logic yet.
 
 **Detailed milestone plan:** `docs/phase-1-plan.md` (M1 toolchain → M8 docs).
 
-## Phase 2 — i18n and theming ⏳ Pending
+## Phase 2 — i18n and theming ✅ Complete
 
 **Goal:** all user-facing text is translatable and all colors are semantic tokens driven by
 runtime-switchable palettes.
@@ -47,8 +47,11 @@ runtime-switchable palettes.
   text-muted, accent); the mapping is recorded in `DECISIONS.md`.
 - No component reads colors from `ui-sample/`.
 
-Status: complete. Mapping recorded as D-013; palette switching persists via `localStorage`;
-`src/lib/theme/palettes.test.ts` enforces contrast floors.
+Status: complete. The placeholder route was replaced by the real shell (top bar, sidebar,
+content area, player bar, settings panel); the webview context menu is suppressed. Mapping
+recorded as D-013; palette choice persists via `localStorage`; language switching lives in
+Settings; `src/lib/theme/palettes.test.ts` enforces contrast floors and
+`src/lib/i18n/no-hardcoded-strings.test.ts` enforces the catalog rule.
 
 ## Phase 3 — Spotify browse layer ⏳ Pending
 

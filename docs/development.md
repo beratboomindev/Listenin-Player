@@ -25,11 +25,14 @@ npm run tauri build   # local Linux bundle
 ## Layout
 
 ```
-src/             SvelteKit app (static, SSR off)
-src/lib/i18n/    locale catalogs (en, tr) and the translation helper
-src-tauri/       Rust crate: window creation, commands, bundle config
-docs/            phase plans and long-form documentation
-ui-sample/       design reference only, never imported by app code
+src/                 SvelteKit app (static, prerendered, no server runtime)
+src/lib/components/  shell parts: TopBar, Sidebar, PlayerBar, SettingsPanel
+src/lib/i18n/        locale catalogs (en, tr) and the translation helper
+src/lib/theme/       palette tokens, runtime switching, persistence, contrast tests
+src/lib/sample/      clearly labelled sample content, removed once real data lands
+src-tauri/           Rust crate: window creation, commands, bundle config
+docs/                phase plans and long-form documentation
+ui-sample/           design reference only, never imported by app code
 ```
 
 ## Notes
@@ -44,3 +47,5 @@ ui-sample/       design reference only, never imported by app code
 - Palettes live in `src/lib/theme/palettes.ts`. The `source` arrays are verbatim and must not
   be edited; derived tokens and their contrast floors are documented in `DECISIONS.md`
   (D-013). Components only ever read `--color-*` variables, never hex values.
+- `src/routes/+layout.ts` sets `prerender` and `ssr`: the build stays fully static, but the
+  first paint is already populated because the HTML is generated at build time.

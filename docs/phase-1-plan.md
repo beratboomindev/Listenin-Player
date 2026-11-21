@@ -26,7 +26,7 @@ green. No feature logic, no `yt-dlp`, no Spotify.
 ### M2 — Repository layout
 
 ```
-src/            SvelteKit app (static, SSR off)
+src/            SvelteKit app (static, prerendered, no server runtime)
 src/lib/i18n/   locale catalogs and translation helper
 src-tauri/      Rust crate: main.rs, lib.rs, tauri.conf.json, icons
 docs/           phase plans and long-form docs
