@@ -11,7 +11,15 @@
 
   let settingsOpen = $state(false);
 
-  onMount(initTheme);
+  onMount(() => {
+    initTheme();
+
+    // Desktop app: the webview context menu (back/reload/inspect) is not part of the product.
+    const blockContextMenu = (event: MouseEvent) => event.preventDefault();
+    window.addEventListener('contextmenu', blockContextMenu);
+
+    return () => window.removeEventListener('contextmenu', blockContextMenu);
+  });
 </script>
 
 <div class="app">
