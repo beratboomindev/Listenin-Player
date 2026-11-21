@@ -39,7 +39,8 @@ Open verification: the built app has not been launched interactively on a real d
 
 ## Repository
 
-- Remote: `https://github.com/beratboomindev/listenin` (public, default branch `main`).
+- Remote: `https://github.com/beratboomindev/Listenin-Player` (public, default branch `main`;
+  the repository was renamed from `listenin`).
 - Local toolchains are user-installed: Node in `~/.local/opt`, Rust in `~/.cargo`,
   `gh` in `~/.local/bin`. A fresh shell may need those on `PATH`.
 - `.memo/` is local tooling output and is git-ignored; do not commit it.
